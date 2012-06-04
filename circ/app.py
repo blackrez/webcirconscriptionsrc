@@ -23,7 +23,7 @@ def jsonify_status_code(status_code, *args, **kw):
 def index():
     return render_template('index.html')
 
-@app.route('/fr/')
+@app.route('/fr')
 def fr_circ():
     try:
         data = loads(request.args.get('q', '{}'))

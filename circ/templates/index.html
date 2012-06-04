@@ -2,19 +2,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Circonscriptions 2012 par Regards Citoyens version alpha</title>
+	<title>Circonscriptions 2012 version alpha</title>
 	<meta charset="utf-8" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="/static/dist/leaflet.css" />
+	<link rel="stylesheet" href="/static/lib/leaflet.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<!--[if lte IE 8]><link rel="stylesheet" href="leaflet.ie.css" /><![endif]-->
 </head>
 <body>
-	
+	<div id="content">
 	<div id="map" style="width: 600px; height: 400px"></div>
-	<script src="/static/dist/leaflet.js"></script>
+	<script src="/static/lib/leaflet.js"></script>
 	<script src="/static/cir.js"></script>
+	<div id="legende">
+	<h2>Légende</h2>
+	<span style="background-color:red;">&nbsp&nbsp&nbsp&nbsp</span><span>Circonscriptions à cartographier</span><br>
+	<span style="background-color:green;">&nbsp&nbsp&nbsp&nbsp</span><span>Circonscriptions cartographiées</span><br>
+	<span>Autres : circonscriptions de l'étranger</span>
+	</div>
+	<a href="https://github.com/Icephale/constituency-fr-NG">Basé sur des données odbl des circonscriptions</a>
+	N'hésitez pas à donner un coup de main.
+	</div>
 </body>
 </html>
