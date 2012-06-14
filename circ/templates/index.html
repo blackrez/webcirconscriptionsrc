@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,23 +6,41 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="/static/lib/leaflet.css" />
+	<link rel="stylesheet" href="{{url_for('static', filename='leaflet/leaflet.css')}}" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<!--[if lte IE 8]><link rel="stylesheet" href="leaflet.ie.css" /><![endif]-->
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="{{url_for('static', filename='leaflet/leaflet.ie.css')}}" /><![endif]-->
+	<script type="text/javascript" src="{{url_for('static', filename='kickstart/js/prettify.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename='kickstart/js/kickstart.js')}}"></script>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='kickstart/css/kickstart.css')}}" media="all" />
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}" media="all" />
 </head>
 <body>
-	<div id="content">
-	<div id="map" style="width: 600px; height: 400px"></div>
-	<script src="/static/lib/leaflet.js"></script>
-	<script src="/static/cir.js"></script>
-	<div id="legende">
-	<h2>Légende</h2>
-	<span style="background-color:red;">&nbsp&nbsp&nbsp&nbsp</span><span>Circonscriptions à cartographier</span><br>
-	<span style="background-color:green;">&nbsp&nbsp&nbsp&nbsp</span><span>Circonscriptions cartographiées</span><br>
-	<span>Autres : circonscriptions de l'étranger</span>
+	<div id="wrap" class="clearfix">
+		<h1>Cartographie des circonscriptions législatives 2012</h1>
+		<div id="map" class='col_10' style="width: 650px; height: 450px"></div>
+		<script src="{{url_for('static', filename='leaflet/leaflet.js')}}"></script>
+		<script src="{{url_for('static', filename='cir.js')}}"></script>
+		<div id="legende" class='col_2'>
+			<label for="text1">Recherche par ville</label>
+			<input id="text1" type="text" />
+			<button class="small">Rechercher</button>
+			<ul class='alt'>
+				<li>Légende</li>
+				<li style="background-color:red;">Circonscriptions à cartographier</li>
+				<li style="background-color:green;">Circonscriptions cartographiées</li>
+				<li>Autres : circonscriptions de l'étranger</li>
+			</ul>
+		</div>
+		<div id="help" class="cleafix col_12">
+			<h2>Comment compléter cette carte ?</h2>
+			<p><span>Tutoriel réalisé par Benjamin Bohard de <a href="http://www.coagul.org"/>COAGUL</a> Licence CC - Télécharger la vidéo en MKV</span>
+
+				<span>Les logiciels utilisés dans ce tutoriel sont <a href="http://josm.openstreetmap.de/wiki/Fr%3AWikiStart">JOSM</a> (dernière version "tested") et <a href="http://www.qgis.org/fr.html">QGIS</a> (à minima en version 1.7.3).</span>
+				<span>Pour contribuer au projet, vous pouvez nous rejoindre sur <a href="http://webchat.freenode.net/?channels=#opendatabourgogne">IRC</a> (freenode #OpenDataBourgogne).</span>
+			</p>
+		</div>
 	</div>
-	<a href="https://github.com/Icephale/constituency-fr-NG">Basé sur des données odbl des circonscriptions</a>
-	N'hésitez pas à donner un coup de main.
-	</div>
+	<a href="https://github.com/Icephale/constituency-fr-NG">Application basée sur des données odbl des circonscriptions</a>
 </body>
 </html>
