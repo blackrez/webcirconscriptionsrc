@@ -10,7 +10,6 @@ distribute==0.6.27
 geojson==1.0.1
 ipython==0.12.1
 psycopg2==2.4.5
-readline==6.2.2
 simplejson==2.5.2
 ujson==1.18
 wsgiref==0.1.2

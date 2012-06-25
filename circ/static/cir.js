@@ -9,13 +9,14 @@ map.setView(new L.LatLng(46.920, 2.593), 5).addLayer(cloudmade);
 var cirgeojson = new L.GeoJSON();
 
 cirgeojson.on('featureparse', function(e) {
-	if (e.properties.status){
+	/**if (e.properties.status){
 		color = 'green';
 	}
 	else{
 		color = 'red';
-	}
-	e.layer.bindPopup('circonscriptions' + e.properties.name + '<br>');
+	}**/
+	color = 'green';
+	e.layer.bindPopup('circonscriptions' + e.properties.name + '<br />' + e.properties.description);
 	e.layer.setStyle({ color:  'black', weight: 1, fill: true, fillColor: color, fillOpacity: 0.85 });
 });
 $.getJSON(
@@ -27,7 +28,7 @@ $.getJSON(
 });
 
 map.addLayer(cirgeojson);
-
+/**
 var wcirgeojson = new L.GeoJSON();
 var last = 0;
 var colors = ['003300','003333','003366','003399','FFFF33','0033FF','006600','006633','006666','006699','0066CC','0066FF'];

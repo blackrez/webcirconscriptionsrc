@@ -26,11 +26,11 @@ class Circonscription(db.Model):
 
     #column definitions
     gid = db.Column(db.Integer(), primary_key=True)
-    circo = db.Column(db.String(255))
-    status = db.Column(db.String(5)) #TODO transform into boolean type
-    status2 = db.Column(db.Boolean)
-    #label_circ = db.Column(db.String(55))
+    #circo = db.Column(db.String(255))
+    # = db.Column(db.String(55))
     geom = GeometryColumn(u'geom', MultiPolygon())
+    name = db.Column(db.String(255))
+    description = db.Column(db.String(255))
     
 class Departement():
     pass

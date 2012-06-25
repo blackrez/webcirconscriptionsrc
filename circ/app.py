@@ -8,6 +8,8 @@ from ujson import dumps, loads
 
 from models import *
 
+import logging
+
 def jsonify_status_code(status_code, *args, **kw):
     """Returns a jsonified response with the specified HTTP status code.
 
@@ -43,13 +45,14 @@ def fr_circ():
             }
     
     for circo in query:
+        #sale mais fonctionnel
         geomjs = db.session.scalar(circo.geom.geojson)
         geompy = loads(geomjs)
         geojs['features'].append(
             {'geometry': geompy, 
                 'type':'Feature',
                 'id': circo.gid, 
-                'properties': {'name' : circo.circo, 'status' : circo.status2}
+                'properties': {'name' : circo.name, 'description' : circo.description}
             }
         )
     
